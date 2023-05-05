@@ -1,5 +1,8 @@
 package org.sw_testing.models;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 public class Mail {
     private final String to;
     private final String subject;
@@ -9,6 +12,14 @@ public class Mail {
         this.to = to;
         this.subject = subject;
         this.message = message;
+    }
+
+    public Mail(WebElement mailWebElement) {
+        this.to = "";
+        this.subject = "";
+        this.message = "";
+
+        System.out.println(mailWebElement.findElement(By.xpath("td[5]")).getText());;
     }
 
     public String GetTo() {
