@@ -5,10 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.sw_testing.pages.BasePage;
-import org.sw_testing.pages.FoldersPage;
-import org.sw_testing.pages.InboxPage;
-import org.sw_testing.pages.NewMessagePage;
+import org.sw_testing.pages.*;
 
 public class MainMenu extends BasePage {
     @FindBy(xpath = "//div[@id='menu']/div[@class='leftFloat']/ul/li[1]/a")
@@ -17,6 +14,8 @@ public class MainMenu extends BasePage {
     protected WebElement newMessageButton;
     @FindBy(xpath = "//div[@id='menu']/div[@class='leftFloat']/ul/li[3]/a")
     protected WebElement foldersButton;
+    @FindBy(xpath = "//div[@id='menu']/div[@class='leftFloat']/ul/li[8]/a")
+    protected WebElement logoutButton;
 
     public MainMenu(WebDriver driver) {
         super(driver);
@@ -37,5 +36,10 @@ public class MainMenu extends BasePage {
     public FoldersPage NavigateToFoldersPage() {
         foldersButton.click();
         return PageFactory.initElements(driver, FoldersPage.class);
+    }
+
+    public LoginPage Logout() {
+        logoutButton.click();
+        return PageFactory.initElements(driver, LoginPage.class);
     }
 }

@@ -30,6 +30,7 @@ public class NewMessagePage extends BasePage {
     }
 
     public void FillTo(String to) {
+        toField.clear();
         toField.sendKeys(to);
     }
 
@@ -38,6 +39,7 @@ public class NewMessagePage extends BasePage {
     }
 
     public void FillSubject(String subject) {
+        subjectField.clear();
         subjectField.sendKeys(subject);
     }
 
@@ -46,6 +48,7 @@ public class NewMessagePage extends BasePage {
     }
 
     public void FillMessage(String message) {
+        messageField.clear();
         messageField.sendKeys(message);
     }
 

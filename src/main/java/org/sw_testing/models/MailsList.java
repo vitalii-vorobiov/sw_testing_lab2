@@ -25,6 +25,8 @@ public class MailsList extends BasePage {
     private WebElement markAsSelect;
     @FindBy(xpath = "//select[@id='targetMailbox1']")
     private WebElement moveToSelect;
+    @FindBy(xpath = "//body/table[3]/tbody/tr/td/div[@class='rightFloat']/ul/li/a")
+    private WebElement purgeDeletedButton;
 
     public MailsList(WebDriver driver) {
         super(driver);
@@ -63,8 +65,16 @@ public class MailsList extends BasePage {
         deleteButton.click();
     }
 
+    public void UndeleteSelected() {
+        undeleteButton.click();
+    }
+
     public void MoveSelected() {
         moveToButton.click();
+    }
+
+    public void PurgeDeleted() {
+        purgeDeletedButton.click();
     }
 
     public void SelectOption(String value) {
